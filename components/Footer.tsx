@@ -14,7 +14,7 @@ const Footer = () => {
                         <div className="flex items-center gap-3 mb-6">
                             <div className="relative w-10 h-10 rounded-full overflow-hidden bg-white border border-gray-800">
                                 <Image
-                                    src="/images/pruva-logo.jpg"
+                                    src="/pruva_cleaning/images/pruva-logo.jpg"
                                     fill
                                     className="object-contain p-0.5"
                                     alt="Pruva Logo"

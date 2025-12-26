@@ -120,7 +120,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                                     <p className="text-gray-400 mb-8">Bu hizmet için size özel fiyat teklifimizi 30 saniye içinde oluşturun.</p>
 
                                     <a
-                                        href="/#quote-form"
+                                        href="/pruva_cleaning/#quote-form"
                                         className="block w-full bg-primary hover:bg-orange-600 text-white text-center py-4 rounded-xl font-bold transition-all shadow-lg shadow-primary/25 mb-4"
                                     >
                                         Fiyat Teklifi Al

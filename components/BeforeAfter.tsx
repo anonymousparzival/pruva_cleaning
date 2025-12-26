@@ -80,7 +80,7 @@ const BeforeAfter = () => {
                     {/* Shows fully, covered by the left image */}
                     <div className="absolute inset-0 w-full h-full">
                         <img
-                            src="/images/after-1.png"
+                            src="/pruva_cleaning/images/after-1.png"
                             alt="After Clean"
                             className="w-full h-full object-cover pointer-events-none"
                         />
@@ -96,7 +96,7 @@ const BeforeAfter = () => {
                         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
                     >
                         <img
-                            src="/images/before-1.jpg"
+                            src="/pruva_cleaning/images/before-1.jpg"
                             alt="Before Construction"
                             className="w-full h-full object-cover grayscale contrast-125 pointer-events-none"
                         />
