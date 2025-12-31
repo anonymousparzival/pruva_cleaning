@@ -150,13 +150,6 @@ const BeforeAfter = () => {
         return () => window.removeEventListener('keydown', handleKeyPress);
     }, [prevSlide, nextSlide]);
 
-    const [galleryItems, setGalleryItems] = useState(getGalleryItems());
-    
-    // Client-side'da path'leri güncelle
-    useEffect(() => {
-        setGalleryItems(getGalleryItems());
-    }, []);
-
     const currentItem = galleryItems[currentIndex];
 
     return (
