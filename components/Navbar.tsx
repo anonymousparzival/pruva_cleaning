@@ -37,15 +37,15 @@ const Navbar = () => {
                     <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('#hero')}>
                         <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-white/20 shadow-md bg-white">
                             <Image
-                                src="/pruva_cleaning/images/pruva-logo.jpg"
-                                alt="Pruva Temizlik Logo"
+                                src="/images/pruva-logo.jpg"
+                                alt="Karaboğa Temizlik Logo"
                                 fill
-                                className="object-contain p-1"
+                                className="object-contain scale-110"
                             />
                         </div>
                         <div className="flex flex-col">
                             <span className={`text-xl md:text-2xl font-bold tracking-tight leading-none ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-                                Pruva Temizlik
+                                Karaboğa Temizlik
                             </span>
                             <span className={`text-[10px] uppercase tracking-widest font-medium ${isScrolled ? 'text-primary' : 'text-gray-300'}`}>
                                 Endüstriyel Yapı Bakımı
@@ -72,7 +72,7 @@ const Navbar = () => {
                             </button>
                         ))}
                         <a
-                            href="tel:+905555555555"
+                            href="tel:+905343710511"
                             className={`flex items-center gap-2 px-5 py-2.5 rounded-full transition-all ${isScrolled
                                 ? 'bg-primary text-white hover:bg-orange-600 shadow-lg shadow-orange-200'
                                 : 'bg-white text-primary hover:bg-gray-100'

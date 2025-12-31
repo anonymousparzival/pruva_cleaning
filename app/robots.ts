@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://pruvatemizlik.com/sitemap.xml', // Change to actual domain
+        sitemap: 'https://karabogatemizlik.com/sitemap.xml', // Change to actual domain
     };
 }

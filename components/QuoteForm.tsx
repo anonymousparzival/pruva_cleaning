@@ -26,10 +26,11 @@ const QuoteForm = () => {
 
         const finalFlatType = flatType === 'Diğer' ? otherFlatDetails : flatType;
         const statusText = status === 'new' ? 'Yeni Bitti (Kaba + İnce)' : 'Tadilat Sonrası (Boya & Badana)';
-        const message = `Merhaba, Pruva Temizlik web sitenizden fiyat teklifi almak istiyorum.%0A%0A🏠 *Daire Tipi:* ${finalFlatType}%0A📐 *Metrekare:* ${size} m²%0A🔨 *Durum:* ${statusText}%0A📱 *İletişim:* ${phone}`;
+        
+        // Profesyonel WhatsApp mesaj formatı
+        const message = `Merhaba, Karaboğa Temizlik web sitenizden fiyat teklifi almak istiyorum.%0A%0A📋 *FİYAT TEKLİFİ TALEBİ*%0A%0A🏠 *Daire Tipi:* ${encodeURIComponent(finalFlatType)}%0A📐 *Metrekare:* ${size} m²%0A🔨 *İnşaat Durumu:* ${encodeURIComponent(statusText)}%0A📱 *Telefon:* ${encodeURIComponent(phone)}%0A%0AEn kısa sürede dönüş yapmanızı rica ederim. Teşekkürler!`;
 
-        // Replace with the actual phone number
-        const whatsappUrl = `https://wa.me/905555555555?text=${message}`;
+        const whatsappUrl = `https://wa.me/905343710511?text=${message}`;
         window.open(whatsappUrl, '_blank');
     };
 
@@ -48,7 +49,7 @@ const QuoteForm = () => {
                 {/* Header */}
                 <div className="text-center mb-10">
                     <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
-                        Pruva ile <span className="text-primary">Hızlı Fiyat</span> Teklifi Al
+                        Karaboğa ile <span className="text-primary">Hızlı Fiyat</span> Teklifi Al
                     </h2>
                     <p className="text-gray-500">
                         Profesyonel inşaat sonrası temizlik için 30 saniyede fiyat öğrenin.

@@ -28,7 +28,7 @@ const Services = () => {
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-4">Kaba İnşaat Temizliği</h3>
                         <p className="text-gray-600 mb-8 leading-relaxed">
-                            Moloz atımı, kaba tozun sanayi tipi makinelerle çekilmesi ve alanın çalışmaya hazır hale getirilmesi.
+                            Moloz atımı, kaba tozun detaylı temizlik yöntemleriyle çekilmesi ve alanın çalışmaya hazır hale getirilmesi.
                         </p>
                         <Link href="/services/kaba-insaat-temizligi" className="flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all group">
                             Detaylı Bilgi <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

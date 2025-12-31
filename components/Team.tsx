@@ -11,7 +11,7 @@ const Team = () => {
           {/* Left Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-              Pruva Temizlik: <br />
+              Karaboğa Temizlik: <br />
               <span className="text-primary">En Güvenilir İnşaat</span> <br />
               Temizlik Ekibi
             </h2>
@@ -46,7 +46,7 @@ const Team = () => {
               <ShieldCheck className="w-6 h-6 text-primary" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-900">Neden Pruva Temizlik?</h3>
+              <h3 className="text-xl font-bold text-gray-900">Neden Karaboğa Temizlik?</h3>
               <p className="text-sm text-gray-500">Bizi tercih etmeniz için geçerli sebeplerimiz var.</p>
             </div>
           </div>

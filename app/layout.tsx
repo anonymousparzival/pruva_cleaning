@@ -9,23 +9,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://karabogatemizlik.com'),
   title: {
-    template: "%s | Pruva Temizlik",
-    default: "Pruva Temizlik | Aydın İnşaat Sonrası Temizlik",
+    template: "%s | Karaboğa Temizlik",
+    default: "Karaboğa Temizlik | Aydın İnşaat Sonrası Temizlik",
   },
-  description: "Aydın Pruva Temizlik, inşaat ve tadilat sonrası detaylı temizlikte profesyonel çözüm ortağınız. 1+1'den villaya kadar tüm mekanlar için %100 müşteri memnuniyeti.",
-  keywords: ["aydın temizlik", "aydın inşaat temizliği", "pruva temizlik", "aydın temizlik şirketi", "inşaat sonrası temizlik aydın", "tadilat temizliği"],
+  description: "Aydın Karaboğa Temizlik, inşaat ve tadilat sonrası detaylı temizlikte profesyonel çözüm ortağınız. 1+1'den villaya kadar tüm mekanlar için %100 müşteri memnuniyeti.",
+  keywords: ["aydın temizlik", "aydın inşaat temizliği", "karaboğa temizlik", "aydın temizlik şirketi", "inşaat sonrası temizlik aydın", "tadilat temizliği"],
   openGraph: {
-    title: "Pruva Temizlik | Aydın İnşaat Sonrası Temizlik",
+    title: "Karaboğa Temizlik | Aydın İnşaat Sonrası Temizlik",
     description: "İnşaat tozuna son! Profesyonel ekip ve ekipmanlarla evinizi pırıl pırıl teslim alıyoruz.",
-    url: "https://pruvatemizlik.com", // Placeholder URL
-    siteName: "Pruva Temizlik",
+    url: "https://karabogatemizlik.com", // Placeholder URL
+    siteName: "Karaboğa Temizlik",
     images: [
       {
         url: "/images/pruva-logo.jpg",
         width: 800,
         height: 600,
-        alt: "Pruva Temizlik Logo",
+        alt: "Karaboğa Temizlik Logo",
       },
     ],
     locale: "tr_TR",
@@ -33,13 +34,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pruva Temizlik | Aydın Profesyonel Temizlik",
+    title: "Karaboğa Temizlik | Aydın Profesyonel Temizlik",
     description: "Aydın'da inşaat sonrası temizliğin güvenilir adresi.",
     images: ["/images/pruva-logo.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: '/icon.jpg',
+    shortcut: '/icon.jpg',
+    apple: '/icon.jpg',
   },
 };
 
@@ -51,10 +57,10 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Pruva Temizlik",
-    "image": "https://pruvatemizlik.com/images/pruva-logo.jpg",
-    "telephone": "+905555555555",
-    "email": "info@pruvatemizlik.com",
+    "name": "Karaboğa Temizlik",
+    "image": "https://karabogatemizlik.com/images/pruva-logo.jpg",
+    "telephone": "+905343710511",
+    "email": "info@karabogatemizlik.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Efeler Mahallesi, Adnan Menderes Bulvarı No: 123",
@@ -68,7 +74,7 @@ export default function RootLayout({
       "latitude": 37.8444,
       "longitude": 27.8458
     },
-    "url": "https://pruvatemizlik.com",
+    "url": "https://karabogatemizlik.com",
     "priceRange": "₺₺",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",

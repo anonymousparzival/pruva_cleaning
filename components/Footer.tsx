@@ -14,16 +14,16 @@ const Footer = () => {
                         <div className="flex items-center gap-3 mb-6">
                             <div className="relative w-10 h-10 rounded-full overflow-hidden bg-white border border-gray-800">
                                 <Image
-                                    src="/pruva_cleaning/images/pruva-logo.jpg"
+                                    src="/images/pruva-logo.jpg"
                                     fill
-                                    className="object-contain p-0.5"
-                                    alt="Pruva Logo"
+                                    className="object-contain scale-110"
+                                    alt="Karaboğa Logo"
                                 />
                             </div>
-                            <h3 className="text-xl font-bold text-white tracking-tight">Pruva Temizlik</h3>
+                            <h3 className="text-xl font-bold text-white tracking-tight">Karaboğa Temizlik</h3>
                         </div>
                         <p className="text-sm leading-relaxed mb-6">
-                            Aydın Pruva Temizlik, inşaat ve tadilat sonrası profesyonel temizlik hizmetleri.
+                            Aydın Karaboğa Temizlik, inşaat ve tadilat sonrası profesyonel temizlik hizmetleri.
                             Modern ekipmanlarımız ve uzman kadromuzla mekanlarınızı teslime hazır hale getiriyoruz.
                         </p>
                         <div className="flex gap-4">
@@ -72,18 +72,18 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                                <span>+90 (555) 555 55 55</span>
+                                <a href="tel:+905343710511" className="hover:text-primary transition-colors">+90 534 371 05 11</a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                                <span>info@pruvatemizlik.com</span>
+                                <span>info@karabogatemizlik.com</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-gray-600">
-                    <p>&copy; {new Date().getFullYear()} Pruva Temizlik Hizmetleri. Tüm hakları saklıdır.</p>
+                    <p>&copy; {new Date().getFullYear()} Karaboğa Temizlik Hizmetleri. Tüm hakları saklıdır.</p>
                     <div className="flex gap-6">
                         <a href="#" className="hover:text-gray-400">Gizlilik Politikası</a>
                         <a href="#" className="hover:text-gray-400">Kullanım Şartları</a>

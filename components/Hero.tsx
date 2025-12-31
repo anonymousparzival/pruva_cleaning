@@ -33,7 +33,7 @@ const Hero = () => {
                 {/* Description Line */}
                 <div className="flex border-l-4 border-primary pl-6 max-w-2xl mb-10">
                     <p className="text-lg md:text-xl text-gray-300 font-medium leading-relaxed">
-                        <span className="text-white font-bold">Pruva Temizlik</span> ile endüstriyel ekipmanlarla kaba ve ince inşaat temizliğinde uzman çözüm.
+                        <span className="text-white font-bold">Karaboğa Temizlik</span> ile endüstriyel ekipmanlarla kaba ve ince inşaat temizliğinde uzman çözüm.
                         Taşınmaya hazır, tertemiz mekanlar yaratıyoruz.
                     </p>
                 </div>

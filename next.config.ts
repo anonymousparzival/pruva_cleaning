@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/pruva_cleaning',
+  // basePath'i sadece production build'de kullan
+  basePath: process.env.NODE_ENV === 'production' ? '/pruva_cleaning' : '',
   images: {
     unoptimized: true,
     remotePatterns: [

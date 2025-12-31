@@ -2,7 +2,7 @@ import { Metadata, Viewport } from 'next';
 
 export const dynamic = 'force-static';
 
-const baseUrl = 'https://pruvatemizlik.com'; // Change to actual domain in production
+const baseUrl = 'https://karabogatemizlik.com'; // Change to actual domain in production
 
 export default function sitemap() {
     const routes = [

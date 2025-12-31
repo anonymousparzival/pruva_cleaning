@@ -64,8 +64,8 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-lg mb-1">İletişim</h4>
-                                    <a href="tel:+905555555555" className="block text-gray-400 hover:text-white transition-colors">
-                                        +90 (555) 555 55 55
+                                    <a href="tel:+905343710511" className="block text-gray-400 hover:text-white transition-colors">
+                                        +90 534 371 05 11
                                     </a>
                                     <a href="mailto:info@aydintemizlik.com" className="block text-gray-400 hover:text-white transition-colors">
                                         info@aydintemizlik.com
