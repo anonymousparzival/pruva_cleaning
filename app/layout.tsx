@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: '/icon.jpg',
-    shortcut: '/icon.jpg',
-    apple: '/icon.jpg',
+    icon: process.env.NODE_ENV === 'production' ? '/pruva_cleaning/icon.jpg' : '/icon.jpg',
+    shortcut: process.env.NODE_ENV === 'production' ? '/pruva_cleaning/icon.jpg' : '/icon.jpg',
+    apple: process.env.NODE_ENV === 'production' ? '/pruva_cleaning/icon.jpg' : '/icon.jpg',
   },
 };
 

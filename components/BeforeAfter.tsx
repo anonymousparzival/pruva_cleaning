@@ -2,37 +2,38 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { BadgeCheck, MessageCircle, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { getImagePath } from '@/lib/paths';
 
 // Test görselleri - hepsi aynı görsel
-const galleryItems = [
+const getGalleryItems = () => [
     {
         id: 1,
-        before: '/images/before-1.jpg',
-        after: '/images/after-1.png',
+        before: getImagePath('/images/before-1.jpg'),
+        after: getImagePath('/images/after-1.png'),
         title: 'Proje 1 - Salon Temizliği',
     },
     {
         id: 2,
-        before: '/images/before-1.jpg',
-        after: '/images/after-1.png',
+        before: getImagePath('/images/before-1.jpg'),
+        after: getImagePath('/images/after-1.png'),
         title: 'Proje 2 - Mutfak Temizliği',
     },
     {
         id: 3,
-        before: '/images/before-1.jpg',
-        after: '/images/after-1.png',
+        before: getImagePath('/images/before-1.jpg'),
+        after: getImagePath('/images/after-1.png'),
         title: 'Proje 3 - Banyo Temizliği',
     },
     {
         id: 4,
-        before: '/images/before-1.jpg',
-        after: '/images/after-1.png',
+        before: getImagePath('/images/before-1.jpg'),
+        after: getImagePath('/images/after-1.png'),
         title: 'Proje 4 - Yatak Odası Temizliği',
     },
     {
         id: 5,
-        before: '/images/before-1.jpg',
-        after: '/images/after-1.png',
+        before: getImagePath('/images/before-1.jpg'),
+        after: getImagePath('/images/after-1.png'),
         title: 'Proje 5 - Genel Temizlik',
     },
 ];
@@ -43,8 +44,14 @@ const BeforeAfter = () => {
     const [isDragging, setIsDragging] = useState(false);
     const [touchStart, setTouchStart] = useState(0);
     const [touchEnd, setTouchEnd] = useState(0);
+    const [galleryItems, setGalleryItems] = useState(getGalleryItems());
     const containerRef = useRef<HTMLDivElement>(null);
     const galleryRef = useRef<HTMLDivElement>(null);
+
+    // Client-side'da path'leri güncelle (production'da basePath için)
+    useEffect(() => {
+        setGalleryItems(getGalleryItems());
+    }, []);
 
     // Auto-play slider (optional)
     useEffect(() => {
@@ -142,6 +149,13 @@ const BeforeAfter = () => {
         window.addEventListener('keydown', handleKeyPress);
         return () => window.removeEventListener('keydown', handleKeyPress);
     }, [prevSlide, nextSlide]);
+
+    const [galleryItems, setGalleryItems] = useState(getGalleryItems());
+    
+    // Client-side'da path'leri güncelle
+    useEffect(() => {
+        setGalleryItems(getGalleryItems());
+    }, []);
 
     const currentItem = galleryItems[currentIndex];
 
