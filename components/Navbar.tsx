@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import Image from 'next/image';
+import { getImagePath } from '@/lib/paths';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -37,7 +38,7 @@ const Navbar = () => {
                     <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('#hero')}>
                         <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-white/20 shadow-md bg-white">
                             <Image
-                                src="/images/pruva-logo.jpg"
+                                src={getImagePath('/images/pruva-logo.jpg')}
                                 alt="Karaboğa Temizlik Logo"
                                 fill
                                 className="object-contain scale-110"

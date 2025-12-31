@@ -3,6 +3,7 @@
 import React from 'react';
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from 'lucide-react';
 import Image from 'next/image';
+import { getImagePath } from '@/lib/paths';
 
 const Footer = () => {
     return (
@@ -14,7 +15,7 @@ const Footer = () => {
                         <div className="flex items-center gap-3 mb-6">
                             <div className="relative w-10 h-10 rounded-full overflow-hidden bg-white border border-gray-800">
                                 <Image
-                                    src="/images/pruva-logo.jpg"
+                                    src={getImagePath('/images/pruva-logo.jpg')}
                                     fill
                                     className="object-contain scale-110"
                                     alt="Karaboğa Logo"
