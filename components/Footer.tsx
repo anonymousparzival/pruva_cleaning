@@ -3,8 +3,16 @@
 import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import Image from 'next/image';
+import { getImagePath } from '@/lib/paths';
 
 const Footer = () => {
+    const [logoPath, setLogoPath] = React.useState('/images/xmax_logo.jpg');
+
+    React.useEffect(() => {
+        // Client-side'da logo path'ini güncelle
+        setLogoPath(getImagePath('/images/xmax_logo.jpg'));
+    }, []);
+
     return (
         <footer className="bg-gray-950 text-gray-400 py-16 border-t border-gray-900 font-sans">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -14,7 +22,7 @@ const Footer = () => {
                         <div className="flex items-center gap-3 mb-6">
                             <div className="relative w-10 h-10 rounded-full overflow-hidden bg-white border border-gray-800">
                                 <Image
-                                    src="/images/xmax_logo.jpg"
+                                    src={logoPath}
                                     fill
                                     className="object-contain scale-110"
                                     alt="XMAX Logo"

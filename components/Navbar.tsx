@@ -3,10 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import Image from 'next/image';
+import { getImagePath } from '@/lib/paths';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [logoPath, setLogoPath] = useState('/images/xmax_logo.jpg');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -14,6 +16,11 @@ const Navbar = () => {
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        // Client-side'da logo path'ini güncelle
+        setLogoPath(getImagePath('/images/xmax_logo.jpg'));
     }, []);
 
     const scrollToSection = (id: string) => {
@@ -37,7 +44,7 @@ const Navbar = () => {
                     <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('#hero')}>
                         <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-white/20 shadow-md bg-white">
                             <Image
-                                src="/images/xmax_logo.jpg"
+                                src={logoPath}
                                 alt="XMAX Temizlik Logo"
                                 fill
                                 className="object-contain scale-110"
