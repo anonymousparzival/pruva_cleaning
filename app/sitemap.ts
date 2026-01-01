@@ -10,6 +10,7 @@ export default function sitemap() {
         '#services',
         '#before-after',
         '#quote-form',
+        '#referanslar',
         '#contact',
     ].map((route) => ({
         url: `${baseUrl}${route}`,

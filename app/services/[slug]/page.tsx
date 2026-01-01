@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!service) return { title: 'Hizmet Bulunamadı' };
 
     return {
-        title: `${service.title} - Karaboğa Temizlik Aydın`,
+        title: `${service.title} - XMAX Temizlik Aydın`,
         description: service.shortDesc,
     }
 }
@@ -361,7 +361,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                                         Güvenilirlik Garantisi
                                     </h4>
                                     <p className="text-sm text-gray-600 leading-relaxed">
-                                        Karaboğa Temizlik olarak tüm hizmetlerimizde %100 müşteri memnuniyeti ve sigortalı hizmet garantisi sunuyoruz.
+                                        XMAX Temizlik olarak tüm hizmetlerimizde %100 müşteri memnuniyeti ve sigortalı hizmet garantisi sunuyoruz.
                                     </p>
                                 </div>
                             </div>

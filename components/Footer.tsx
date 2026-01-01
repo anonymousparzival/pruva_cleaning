@@ -1,9 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 import Image from 'next/image';
-import { getImagePath } from '@/lib/paths';
 
 const Footer = () => {
     return (
@@ -15,29 +14,18 @@ const Footer = () => {
                         <div className="flex items-center gap-3 mb-6">
                             <div className="relative w-10 h-10 rounded-full overflow-hidden bg-white border border-gray-800">
                                 <Image
-                                    src={getImagePath('/images/pruva-logo.jpg')}
+                                    src="/images/xmax_logo.jpg"
                                     fill
                                     className="object-contain scale-110"
-                                    alt="Karaboğa Logo"
+                                    alt="XMAX Logo"
                                 />
                             </div>
-                            <h3 className="text-xl font-bold text-white tracking-tight">Karaboğa Temizlik</h3>
+                            <h3 className="text-xl font-bold text-white tracking-tight">XMAX Temizlik</h3>
                         </div>
-                        <p className="text-sm leading-relaxed mb-6">
-                            Aydın Karaboğa Temizlik, inşaat ve tadilat sonrası profesyonel temizlik hizmetleri.
+                        <p className="text-sm leading-relaxed">
+                            Aydın XMAX Temizlik, inşaat ve tadilat sonrası profesyonel temizlik hizmetleri.
                             Modern ekipmanlarımız ve uzman kadromuzla mekanlarınızı teslime hazır hale getiriyoruz.
                         </p>
-                        <div className="flex gap-4">
-                            <a href="#" className="bg-gray-900 p-2.5 rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
-                                <Instagram className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="bg-gray-900 p-2.5 rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
-                                <Facebook className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="bg-gray-900 p-2.5 rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
-                                <Twitter className="w-5 h-5" />
-                            </a>
-                        </div>
                     </div>
 
                     {/* Quick Access */}
@@ -69,22 +57,18 @@ const Footer = () => {
                         <ul className="space-y-4 text-sm">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                                <span>Efeler Mah. Adnan Menderes Bulv. No:123, Aydın</span>
+                                <span>Girne Mahallesi Efeler Bulvarı 37/F Blok, Aydın</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-5 h-5 text-primary shrink-0" />
                                 <a href="tel:+905343710511" className="hover:text-primary transition-colors">+90 534 371 05 11</a>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Mail className="w-5 h-5 text-primary shrink-0" />
-                                <span>info@karabogatemizlik.com</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-gray-600">
-                    <p>&copy; {new Date().getFullYear()} Karaboğa Temizlik Hizmetleri. Tüm hakları saklıdır.</p>
+                    <p>&copy; {new Date().getFullYear()} XMAX Temizlik Hizmetleri. Tüm hakları saklıdır.</p>
                     <div className="flex gap-6">
                         <a href="#" className="hover:text-gray-400">Gizlilik Politikası</a>
                         <a href="#" className="hover:text-gray-400">Kullanım Şartları</a>

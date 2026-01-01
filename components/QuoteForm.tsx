@@ -28,7 +28,7 @@ const QuoteForm = () => {
         const statusText = status === 'new' ? 'Yeni Bitti (Kaba + İnce)' : 'Tadilat Sonrası (Boya & Badana)';
         
         // Profesyonel WhatsApp mesaj formatı
-        const message = `Merhaba, Karaboğa Temizlik web sitenizden fiyat teklifi almak istiyorum.%0A%0A📋 *FİYAT TEKLİFİ TALEBİ*%0A%0A🏠 *Daire Tipi:* ${encodeURIComponent(finalFlatType)}%0A📐 *Metrekare:* ${size} m²%0A🔨 *İnşaat Durumu:* ${encodeURIComponent(statusText)}%0A📱 *Telefon:* ${encodeURIComponent(phone)}%0A%0AEn kısa sürede dönüş yapmanızı rica ederim. Teşekkürler!`;
+        const message = `Merhaba, XMAX Temizlik web sitenizden fiyat teklifi almak istiyorum.%0A%0A📋 *FİYAT TEKLİFİ TALEBİ*%0A%0A🏠 *Daire Tipi:* ${encodeURIComponent(finalFlatType)}%0A📐 *Metrekare:* ${size} m²%0A🔨 *İnşaat Durumu:* ${encodeURIComponent(statusText)}%0A📱 *Telefon:* ${encodeURIComponent(phone)}%0A%0AEn kısa sürede dönüş yapmanızı rica ederim. Teşekkürler!`;
 
         const whatsappUrl = `https://wa.me/905343710511?text=${message}`;
         window.open(whatsappUrl, '_blank');
@@ -49,7 +49,7 @@ const QuoteForm = () => {
                 {/* Header */}
                 <div className="text-center mb-10">
                     <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
-                        Karaboğa ile <span className="text-primary">Hızlı Fiyat</span> Teklifi Al
+                        XMAX ile <span className="text-primary">Hızlı Fiyat</span> Teklifi Al
                     </h2>
                     <p className="text-gray-500">
                         Profesyonel inşaat sonrası temizlik için 30 saniyede fiyat öğrenin.

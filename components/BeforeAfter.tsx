@@ -1,40 +1,34 @@
 'use client';
 
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { BadgeCheck, MessageCircle, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { getImagePath } from '@/lib/paths';
 
-// Test görselleri - hepsi aynı görsel
-const getGalleryItems = () => [
+// Gerçekçi öncesi-sonrası görselleri - base path olmadan (Next.js basePath otomatik ekler)
+const baseGalleryItems = [
     {
         id: 1,
-        before: getImagePath('/images/before-1.jpg'),
-        after: getImagePath('/images/after-1.png'),
+        before: '/images/before_saloon.jpeg',
+        after: '/images/after_saloon.jpeg',
         title: 'Proje 1 - Salon Temizliği',
     },
     {
         id: 2,
-        before: getImagePath('/images/before-1.jpg'),
-        after: getImagePath('/images/after-1.png'),
+        before: '/images/kitchen_before.jpeg',
+        after: '/images/kitchen_after.jpeg',
         title: 'Proje 2 - Mutfak Temizliği',
     },
     {
         id: 3,
-        before: getImagePath('/images/before-1.jpg'),
-        after: getImagePath('/images/after-1.png'),
+        before: '/images/before-1.jpg',
+        after: '/images/after-1.png',
         title: 'Proje 3 - Banyo Temizliği',
     },
     {
         id: 4,
-        before: getImagePath('/images/before-1.jpg'),
-        after: getImagePath('/images/after-1.png'),
+        before: '/images/bedroom_before.jpeg',
+        after: '/images/bedroom_after.jpeg',
         title: 'Proje 4 - Yatak Odası Temizliği',
-    },
-    {
-        id: 5,
-        before: getImagePath('/images/before-1.jpg'),
-        after: getImagePath('/images/after-1.png'),
-        title: 'Proje 5 - Genel Temizlik',
     },
 ];
 
@@ -44,13 +38,19 @@ const BeforeAfter = () => {
     const [isDragging, setIsDragging] = useState(false);
     const [touchStart, setTouchStart] = useState(0);
     const [touchEnd, setTouchEnd] = useState(0);
-    const [galleryItems, setGalleryItems] = useState(getGalleryItems());
     const containerRef = useRef<HTMLDivElement>(null);
     const galleryRef = useRef<HTMLDivElement>(null);
 
-    // Client-side'da path'leri güncelle (production'da basePath için)
+    // Gallery items'ı client-side'da path'lerle güncelle - hydration mismatch'i önlemek için
+    const [galleryItems, setGalleryItems] = useState(baseGalleryItems);
+
     useEffect(() => {
-        setGalleryItems(getGalleryItems());
+        // Client-side'da path'leri güncelle
+        setGalleryItems(baseGalleryItems.map(item => ({
+            ...item,
+            before: getImagePath(item.before),
+            after: getImagePath(item.after),
+        })));
     }, []);
 
     // Auto-play slider (optional)
@@ -153,8 +153,8 @@ const BeforeAfter = () => {
     const currentItem = galleryItems[currentIndex];
 
     return (
-        <section className="py-24 bg-gradient-to-b from-white to-stone-50 select-none">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-white to-stone-50 select-none">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
                 {/* Header */}
                 <div className="text-center mb-12">
                     <span className="text-primary font-bold text-xs tracking-widest uppercase mb-2 block">
@@ -238,7 +238,7 @@ const BeforeAfter = () => {
                                                 className="absolute top-0 bottom-0 w-1 bg-white cursor-col-resize z-20 pointer-events-none shadow-[0_0_15px_rgba(0,0,0,0.6)]"
                                                 style={{ left: `${sliderPosition}%`, transition: 'none' }}
                                             >
-                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary hover:bg-orange-600 text-white w-12 h-12 md:w-14 md:h-14 rounded-full grid place-items-center shadow-xl border-4 border-white transition-all transform group-hover:scale-110 active:scale-95">
+                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary hover:bg-orange-600 text-white w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full grid place-items-center shadow-xl border-4 border-white transition-all transform group-hover:scale-110 active:scale-95 min-h-[44px] min-w-[44px]">
                                                     <div className="flex gap-1">
                                                         <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
                                                         <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
@@ -254,14 +254,14 @@ const BeforeAfter = () => {
                         {/* Navigation Arrows */}
                         <button
                             onClick={prevSlide}
-                            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-gray-900 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110 active:scale-95 backdrop-blur-sm border border-gray-200"
+                            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-gray-900 w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110 active:scale-95 backdrop-blur-sm border border-gray-200 min-h-[44px] min-w-[44px]"
                             aria-label="Önceki proje"
                         >
                             <ChevronLeft className="w-6 h-6 md:w-7 md:h-7" />
                         </button>
                         <button
                             onClick={nextSlide}
-                            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-gray-900 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110 active:scale-95 backdrop-blur-sm border border-gray-200"
+                            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-gray-900 w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110 active:scale-95 backdrop-blur-sm border border-gray-200 min-h-[44px] min-w-[44px]"
                             aria-label="Sonraki proje"
                         >
                             <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />
@@ -290,16 +290,17 @@ const BeforeAfter = () => {
                     </div>
 
                     {/* Thumbnail Navigation */}
-                    <div className="flex items-center justify-center gap-3 overflow-x-auto pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                    <div className="flex items-center justify-center gap-2 sm:gap-3 overflow-x-auto pb-2 px-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                         {galleryItems.map((item, index) => (
                             <button
                                 key={item.id}
                                 onClick={() => goToSlide(index)}
-                                className={`relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                                className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border-2 transition-all duration-300 min-h-[44px] min-w-[44px] ${
                                     index === currentIndex
                                         ? 'border-primary shadow-lg shadow-primary/50 scale-110'
                                         : 'border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100'
                                 }`}
+                                aria-label={`${item.title} projesine git`}
                             >
                                 <img
                                     src={item.after}
