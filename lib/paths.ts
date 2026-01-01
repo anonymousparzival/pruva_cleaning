@@ -5,7 +5,7 @@
  */
 export function getBasePath(): string {
   // NODE_ENV kontrolü - hem server hem client'ta aynı değeri döndürür
-  const isProduction = process.env.NODE_ENV === 'production';
+  const isProduction = typeof process !== 'undefined' && process.env.NODE_ENV === 'production';
   
   if (isProduction) {
     // Production'da her zaman basePath kullan
@@ -15,13 +15,14 @@ export function getBasePath(): string {
   // Development'ta: Client-side'da pathname kontrolü yap
   if (typeof window !== 'undefined') {
     const pathname = window.location.pathname;
-    // Eğer pathname /pruva_cleaning ile başlıyorsa basePath kullan (test için)
-    if (pathname.startsWith('/pruva_cleaning')) {
+    const hostname = window.location.hostname;
+    // GitHub Pages'de (github.io domain'i) veya pathname /pruva_cleaning ile başlıyorsa basePath kullan
+    if (hostname.includes('github.io') || pathname.startsWith('/pruva_cleaning')) {
       return '/pruva_cleaning';
     }
   }
   
-  // Development'ta boş
+  // Development'ta (localhost) boş
   return '';
 }
 

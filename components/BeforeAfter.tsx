@@ -41,17 +41,14 @@ const BeforeAfter = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const galleryRef = useRef<HTMLDivElement>(null);
 
-    // Gallery items'ı client-side'da path'lerle güncelle - hydration mismatch'i önlemek için
-    const [galleryItems, setGalleryItems] = useState(baseGalleryItems);
-
-    useEffect(() => {
-        // Client-side'da path'leri güncelle
-        setGalleryItems(baseGalleryItems.map(item => ({
+    // Gallery items'ı path'lerle başlat - production'da basePath eklenir
+    const [galleryItems] = useState(() => {
+        return baseGalleryItems.map(item => ({
             ...item,
             before: getImagePath(item.before),
             after: getImagePath(item.after),
-        })));
-    }, []);
+        }));
+    });
 
     // Auto-play slider (optional)
     useEffect(() => {
