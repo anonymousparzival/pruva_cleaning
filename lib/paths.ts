@@ -4,25 +4,29 @@
  * Server ve client'ta aynı değeri döndürmeli (hydration mismatch'i önlemek için)
  */
 export function getBasePath(): string {
-  // NODE_ENV kontrolü - hem server hem client'ta aynı değeri döndürür
-  const isProduction = typeof process !== 'undefined' && process.env.NODE_ENV === 'production';
-  
-  if (isProduction) {
-    // Production'da her zaman basePath kullan
-    return '/pruva_cleaning';
-  }
-  
-  // Development'ta: Client-side'da pathname kontrolü yap
+  // Client-side'da önce hostname kontrolü yap (GitHub Pages için)
   if (typeof window !== 'undefined') {
-    const pathname = window.location.pathname;
     const hostname = window.location.hostname;
+    const pathname = window.location.pathname;
+    
     // GitHub Pages'de (github.io domain'i) veya pathname /pruva_cleaning ile başlıyorsa basePath kullan
     if (hostname.includes('github.io') || pathname.startsWith('/pruva_cleaning')) {
       return '/pruva_cleaning';
     }
+    
+    // Development'ta (localhost) boş
+    return '';
   }
   
-  // Development'ta (localhost) boş
+  // Server-side: NODE_ENV kontrolü
+  const isProduction = typeof process !== 'undefined' && process.env.NODE_ENV === 'production';
+  
+  if (isProduction) {
+    // Production build'de her zaman basePath kullan
+    return '/pruva_cleaning';
+  }
+  
+  // Server-side development'ta boş
   return '';
 }
 
